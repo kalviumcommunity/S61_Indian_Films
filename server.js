@@ -1,13 +1,8 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const port = process.env.PUBLIC_PORT; 
+const port = process.env.PUBLIC_PORT || 3003;
 app.use(express.json());
-
-// define the empty route
-app.get('/', (req, res) => {
-    res.send('Hello, World! This is the root route.');
-});
 
 // define the ping route
 app.get('/ping', (req, res) => {
@@ -18,6 +13,7 @@ app.use((err,req,res,next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
 })
+
 
 if (require.main === module) {
     app.listen(port, () => {
