@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const port = process.env.PUBLIC_PORT || 3006;
+const port = process.env.PUBLIC_PORT || 3008;
 app.use(express.json());
 
 // define the ping route
