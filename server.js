@@ -4,6 +4,11 @@ require('dotenv').config();
 const port = process.env.PUBLIC_PORT || 3008;
 app.use(express.json());
 
+// define the empty route
+app.get('/', (req, res) => {
+    res.send('Hello, World! This is the root route.');
+});
+
 // define the ping route
 app.get('/ping', (req, res) => {
     res.send('pong');
