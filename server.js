@@ -1,16 +1,23 @@
 const express = require('express');
 const app = express();
-const port = process.env.PUBLIC_PORT || 3000;
+require('dotenv').config();
+const port = process.env.PUBLIC_PORT; 
+app.use(express.json());
+
+// define the empty route
+app.get('/', (req, res) => {
+    res.send('Hello, World! This is the root route.');
+});
 
 // define the ping route
 app.get('/ping', (req, res) => {
     res.send('pong');
 });
 
-// Error handling for missing PUBLIC_PORT environment variable
-if (!process.env.PUBLIC_PORT) {
-    console.error('Error: PUBLIC_PORT environment variable is not set. Using default port 3000.');
-}
+app.use((err,req,res,next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+})
 
 if (require.main === module) {
     app.listen(port, () => {
