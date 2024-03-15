@@ -1,29 +1,31 @@
-const express = require('express');
-const app = express();
+const mongoose=require('mongoose');
+const express=require('express');
 require('dotenv').config();
-const port = process.env.PUBLIC_PORT || 3008;
-app.use(express.json());
 
-// define the empty route
-app.get('/', (req, res) => {
-    res.send('Hello, World! This is the root route.');
-});
+const port=process.env.PORT || 3008;
 
-// define the ping route
-app.get('/ping', (req, res) => {
-    res.send('pong');
-});
-
-app.use((err,req,res,next) => {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong!');
+const app=express();
+mongoose.connect(process.env.MONGODB_URI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
 })
 
+.then(()=>console.log('Connectedto MongoDB'))
+.catch((err) => {
+    console.error('Error connecting to MongoDB:', err);
+    process.exit(1); 
+});
 
-if (require.main === module) {
-    app.listen(port, () => {
-        console.log(`🚀 server running on PORT: ${port}`);
+app.get('/',(req,res)=>{
+    res.json({
+        message:'Welcome to the HomePage',
+        database:mongoose.connection.readyState===1?'connected':'disconnected'
     });
-}
+});
+
+app.listen(port,()=>{
+    console.log(`Server is running on port: ${port}`);
+});
+
 
 module.exports = app;
