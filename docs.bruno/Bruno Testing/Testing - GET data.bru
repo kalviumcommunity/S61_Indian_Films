@@ -4,8 +4,24 @@ meta {
   seq: 1
 }
 
-get {
-  url: 
-  body: none
+post {
+  url: http://localhost:4000/api/create
+  body: json
   auth: none
+}
+
+body:json {
+  {
+  "Rank": 1,
+  "Title": "Dangal",
+  "BoxOfficeCollection_INRCrores": "₹2,023.81 crore",
+  "PrimaryLanguages": "Hindi",
+  "ReleaseYear": 2016,
+  "Genre": "Biographical, Drama",
+  "Directors": "Nitesh Tiwari",
+  "LeadActors": "Aamir Khan",
+  "ProductionCompanies": "Aamir Khan Productions, Walt Disney Pictures, UTV Motion Pictures",
+  "Description": "Based on the true story of wrestler Mahavir Singh Phogat and his daughters Geeta Phogat and Babita Kumari."
+  }
+  
 }
