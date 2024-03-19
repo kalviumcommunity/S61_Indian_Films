@@ -37,7 +37,7 @@ const { filmRoute } = require('./routes.js');
 connectDB();
 
 const app = express();
-const port = 3001;
+const port = 4000;
 
 app.use(express.json());
 
