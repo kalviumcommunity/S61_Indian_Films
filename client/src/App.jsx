@@ -1,13 +1,15 @@
 import './App.css';
 import Home from './Components/Home';
-import {Routes,Route} from 'react-router-dom';
+import Entity from './Components/Entity';
+// import {Routes,Route} from 'react-router-dom';
+import data from '../data.json';
+
 function App() {
 
   return (
     <>
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+      {/* <Route path="/" element={<Home />} /> */}
+      <Entity {...data} />
     </>
   )
 };
