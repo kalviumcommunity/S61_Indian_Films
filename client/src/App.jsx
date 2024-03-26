@@ -26,6 +26,8 @@ import Entity from './Components/Entity';
 import AddEntityPage from './Components/AddEntity';
 import Navbar from './Components/Navbar';
 import { Routes, Route } from 'react-router-dom';
+import UpdateEntity from './Components/UpdateEntity';
+import MovieDB from './Components/MovieDB';
 
 function App() {
   return (
@@ -34,7 +36,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/entities" element={<Entity />} />
+        <Route path="/movies" element={<MovieDB />} />
         <Route path="/add-entity" element={<AddEntityPage />} />
+        <Route path='/update/:id' element={<UpdateEntity />} />
       </Routes>
     </>
   );
