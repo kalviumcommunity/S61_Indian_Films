@@ -11,7 +11,13 @@ function Navbar() {
                 <Link to="/entities" className="nav-link"><strong>Entities</strong></Link>
             </div>
             <div className="nav-item">
+                <Link to="/movies" className="nav-link"><strong>MovieDB</strong></Link>
+            </div>
+            <div className="nav-item">
                 <Link to="/add-entity" className="nav-link"><strong>Add Entity</strong></Link>
+            </div>
+            <div className="nav-item">
+                <Link to="/update/:id" className="nav-link"><strong>Update Entity</strong></Link>
             </div>
         </nav>
     );
