@@ -25,7 +25,8 @@ function Login() {
             console.log("response", response);
             if (response.status === 200) {
                 console.log(response.data);
-                Cookies.set('username', loginUser.username);
+                // Store the token in the cookie
+                Cookies.set('token', response.data.token);
                 console.log('Login successful')
 
             } else {
@@ -44,7 +45,7 @@ function Login() {
     return (
         <div className="login-container">
             <div className="login-form">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h3>Sign in</h3>
                     <p>Enter your email and password</p>
                     <a href="#">
