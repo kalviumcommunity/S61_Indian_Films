@@ -37,6 +37,8 @@ const { filmRoute } = require('./routes.js');
 const cors = require('cors');
 connectDB();
 const userRoute = require('./UserRouter.js');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const port = 4006;
@@ -56,6 +58,11 @@ app.get("/", (req, res) => {
 app.use("/api", filmRoute);
 
 app.use("/admin", userRoute);
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
 
 app.listen(port, () => {
     console.log("Server is running on port");

@@ -16,24 +16,31 @@ function Logout() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const token = Cookies.get("token"); // Retrieve the token from cookies
+            if (!token) {
+                console.log("User is not logged in.");
+                return;
+            }
+
             const response = await axios.post(
                 "http://localhost:4006/admin/logout",
-                {
-                    username: credentials.username,
-                    password: credentials.password
-                }
+                {},
+                { headers: { Authorization: `Bearer ${token}` } } // Send token in the Authorization header
             );
             console.log("Response:", response.data);
-            Cookies.remove("username");
+
+            // Remove the token cookie upon successful logout
+            Cookies.remove("token");
+            console.log("Token removed.");
         } catch (error) {
             console.error("Error:", error);
         }
     };
-    
+
     return (
         <div className="logout-container">
             <div className="logout-form">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h3>Sign up</h3>
                     <p>Enter your email and password</p>
                     <a>
