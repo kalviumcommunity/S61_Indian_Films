@@ -36,14 +36,16 @@ const connectDB = require("./config/db.js");
 const { filmRoute } = require('./routes.js');
 const cors = require('cors');
 connectDB();
+const userRoute = require('./UserRouter.js');
 
 const app = express();
 const port = 4006;
 
 app.use(express.json());
-app.use(cors({
-    origin:'http://localhost:5173'
-}))
+// app.use(cors({
+//     origin:'http://localhost:5173'
+// }))
+app.use(cors())
 
 app.get("/", (req, res) => {
     res.send("pong");
@@ -52,6 +54,8 @@ app.get("/", (req, res) => {
 
 //routes
 app.use("/api", filmRoute);
+
+app.use("/admin", userRoute);
 
 app.listen(port, () => {
     console.log("Server is running on port");

@@ -28,6 +28,9 @@ import Navbar from './Components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import UpdateEntity from './Components/UpdateEntity';
 import MovieDB from './Components/MovieDB';
+import Login from './Components/Login';
+import Logout from './Components/Logout';
+import RegisterForm from './Components/Register';
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
         <Route path="/movies" element={<MovieDB />} />
         <Route path="/add-entity" element={<AddEntityPage />} />
         <Route path='/update/:id' element={<UpdateEntity />} />
+        <Route path="/register" element={<RegisterForm/>}/>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/logout' element={<Logout />}></Route>
       </Routes>
     </>
   );

@@ -19,6 +19,15 @@ function Navbar() {
             <div className="nav-item">
                 <Link to="/update/:id" className="nav-link"><strong>Update Entity</strong></Link>
             </div>
+            <div className='nav-item'>
+                <Link  to='/register' className='nav-link'><strong>Register</strong></Link>
+            </div>
+            <div className='nav-item'>
+                <Link  to="/login" className='nav-link'><strong>LogIn</strong></Link>
+            </div>
+            <div className='nav-item'>
+                <Link to='/logout' className='nav-link'><strong>LogOut</strong></Link>
+            </div>
         </nav>
     );
 }
