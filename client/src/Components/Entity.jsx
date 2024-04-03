@@ -57,6 +57,7 @@ function Entity() {
                         <h6>LeadActors: {entity.LeadActors}</h6>
                         <h6>Production Companies: {entity.ProductionCompanies}</h6>
                         <h6>Description: {entity.Description}</h6> 
+                        <h6>Created By: {entity.created_by}</h6> 
                     </li>
                 ))}
         </ul>
