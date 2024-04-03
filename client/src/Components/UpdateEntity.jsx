@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate ,useLocation} from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import './AddEntity.css';
 
 const UpdateEntity = () => {
@@ -8,7 +8,7 @@ const UpdateEntity = () => {
     const initialData = location.state;
     console.log(initialData);
     const navigate = useNavigate();
-    const [formData, setFormData] = useState( initialData || {
+    const [formData, setFormData] = useState(initialData || {
         Rank: '',
         Title: '',
         BoxOfficeCollection_INRCrores: '',
@@ -18,7 +18,8 @@ const UpdateEntity = () => {
         Directors: '',
         LeadActors: '',
         ProductionCompanies: '',
-        Description: ''
+        Description: '',
+        created_by: ''
     });
 
 
@@ -36,7 +37,7 @@ const UpdateEntity = () => {
     // }, [id]);
 
     const handleChange = e => {
-        setFormData((prevState)=>({ ...prevState, [e.target.name]: e.target.value }));
+        setFormData((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
     };
 
     const handleSubmit = e => {
@@ -44,7 +45,8 @@ const UpdateEntity = () => {
         axios.put(`http://localhost:4006/api/update/${initialData._id}`, formData)
             .then(response => {
                 console.log('Entity updated successfully:', response.data);
-                navigate('/entities');
+                // navigate('/entities');
+                navigate('/movies');
 
                 // Redirect or perform any other action after successful update
             })
@@ -97,6 +99,11 @@ const UpdateEntity = () => {
                     <label className="form-label">Description:</label>
                     <textarea className="form-control" name="Description" value={formData.Description} onChange={handleChange} required></textarea>
                 </div>
+                <div className="Film">
+                    <label className="form-label">Created by:</label>
+                    <input type="text" className="form-control" name="created_by" value={formData.created_by} onChange={handleChange} required />
+                </div>
+
                 <button type="submit" className="btn btn-secondary">Submit</button>
             </form>
         </div>

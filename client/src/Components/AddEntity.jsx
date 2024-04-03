@@ -13,7 +13,8 @@ function AddEntityForm() {
         Directors: '',
         LeadActors: '',
         ProductionCompanies: '',
-        Description: ''
+        Description: '',
+        created_by: ''
     });
 
     const handleChange = (e) => {
@@ -53,7 +54,8 @@ function AddEntityForm() {
                 Directors: '',
                 LeadActors: '',
                 ProductionCompanies: '',
-                Description: ''
+                Description: '',
+                created_by: ''
             });
 
             // Redirect or update the UI as needed
@@ -106,6 +108,11 @@ function AddEntityForm() {
                     <label className="form-label">Description:</label>
                     <textarea className="form-control" name="Description" value={formData.Description} onChange={handleChange} required></textarea>
                 </div>
+                <div className="Film">
+                    <label className="form-label">Created By:</label>
+                    <input type="text" className="form-control" name="created_by" value={formData.created_by} onChange={handleChange} required />
+                </div>
+
                 <button type="submit" className="btn btn-secondary">Submit</button>
             </form>
         </div>
