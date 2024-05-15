@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: sans-serif;
+}
+
+.home-container {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.home-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
