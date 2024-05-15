@@ -11,7 +11,8 @@ const movieSchema = new Schema({
     Directors: { type: String, required: true },
     LeadActors: { type: String, required: true },
     ProductionCompanies: { type: String, required: true },
-    Description: { type: String, required: true }
+    Description: { type: String, required: true },
+    created_by: { type: String, required: true }
 });
 
 const filmModel = mongoose.model("Movie", movieSchema);

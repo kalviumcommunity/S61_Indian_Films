@@ -1,0 +1,106 @@
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logout-form {
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout-form h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logout-form p {
+    margin-bottom: 15px;
+    color: #888;
+}
+
+.logout-form a {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f0cf97 ;
+    border-radius: 5px;
+}
+
+.logout-form a img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logout-form .divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logout-form .divider hr {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ddd;
+    border: none;
+}
+
+.logout-form .divider p {
+    margin: 0 10px;
+    color: #888;
+    font-weight: bold;
+}
+
+.logout-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.logout-form .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.logout-form .submit-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4285f4;
+    cursor: pointer;
+}
+
+.logout-form .submit-button:hover {
+    background-color: #357ae8;
+}
+
+.logout-form .register-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.logout-form .register-link a {
+    color: #4285f4;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logout-form .register-link a:hover {
+    text-decoration: underline;
+}

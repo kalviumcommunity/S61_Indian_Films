@@ -13,3 +13,7 @@ Welcome to the Top Grossing Indian Films Archive! This web application provides 
 ## Credits
 
 This project was created by G.Sai Pavithra.
+
+## Deployment link
+
+<https://65f961af6c5edea42da35ae2--rad-manatee-a4fd7b.netlify.app/>
