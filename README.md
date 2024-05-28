@@ -16,4 +16,4 @@ This project was created by G.Sai Pavithra.
 
 ## Deployment link
 
-<https://65f961af6c5edea42da35ae2--rad-manatee-a4fd7b.netlify.app/>
+<https://665559291edda684ca0b1a02--super-faun-d2ebbd.netlify.app/>
